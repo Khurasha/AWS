@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Web Server</title>
+    <style>
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello I am from Web Server</h1>
+    <img src="2.jpg" alt="scenery">
+    <div id="tofetch"></div>
+<script>
+    var tofetch = document.getElementById('tofetch');
+        fetch('http://s3bucket78.s3-website-us-east-1.amazonaws.com')
+        .then((response) => {
+            return response.text();
+        })
+        .then((html) => {
+            tofetch.innerHTML = html
+            });
+            </script>
+</body>
